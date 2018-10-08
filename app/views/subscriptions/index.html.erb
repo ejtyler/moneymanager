@@ -1,3 +1,26 @@
+<h1>Subscriptions List</h1>
+
+<div class="container">
+  <% @subscriptions.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |subscription| %>
+        <div class="col-md-4">
+          <h4><%= link_to subscription.title, subscription %></h4>
+          <%= subscription.amount %><br>
+          <%= subscription.due_date %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Subscription', new_subscription_path %>
+
+
+
+
+<!--
 <p id="notice"><%= notice %></p>
 
 <h1>Subscriptions</h1>
@@ -29,3 +52,4 @@
 <br>
 
 <%= link_to 'New Subscription', new_subscription_path %>
+-->
