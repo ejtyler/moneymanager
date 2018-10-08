@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @subscription.title %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @subscription.due_date %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @subscription.amount %>
-</p>
-
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
-<%= link_to 'Back', subscriptions_path %>
+<div class="row">
+	<div class="col-md-3">
+		<p><b>Title: </b><%= @subscription.title %></p>
+		<p><b>Amount: </b><%= @subscription.amount %></p>
+		<p><b>Due Date: </b><%= @subscription.due_date %></p>
+		<p>
+			<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+			<%= link_to 'Delete', @subscription, data: { confirm: 'Are you sure?' }, method: :delete %> |
+			<%= link_to 'Back', subscriptions_path %>
+		</p>
+	</div>
+</div>
