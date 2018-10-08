@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @subscription.title %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @subscription.due_date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @subscription.amount %>
+</p>
+
+<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+<%= link_to 'Back', subscriptions_path %>
