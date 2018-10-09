@@ -1,4 +1,15 @@
-<h1>Subscriptions List</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <h1>Subscriptions List</h1>
+    </div>
+    <div class="col-md-2" style="text-align: center">
+      <%= link_to new_subscription_path do %>
+        <button style="margin-top: 20%;" value="New Subscription">New Subscription</button>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <% @subscriptions.in_groups_of(3) do |group| %>
@@ -13,9 +24,6 @@
     </div>
   <% end %>
 </div>
-<br>
-
-<%= link_to 'New Subscription', new_subscription_path %>
 
 
 
