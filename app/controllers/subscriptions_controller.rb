@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.json
   def index
-    @subscriptions = Subscription.all
+    @subscriptions = current_user.subscriptions
   end
 
   # GET /subscriptions/1
@@ -24,7 +24,7 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
-    @subscription = Subscription.new(subscription_params)
+    @subscription = current_user.subscriptions.new(subscription_params)
 
     respond_to do |format|
       if @subscription.save
