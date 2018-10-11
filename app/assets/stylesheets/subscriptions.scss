@@ -1,3 +1,23 @@
 // Place all the styles related to the subscriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.subscription {
+	text-align: center;
+	border: 3px solid black;
+	padding-bottom: 1em;
+}
+
+.list-links {
+	:hover {
+		background-color: #AAA;
+		color: #FFF;
+		border-color: #FFF;
+		text-decoration: none;
+		h4 {
+			text-decoration: underline;
+		}
+		p {
+			font-weight: bold;
+		}
+	}
+}

@@ -13,7 +13,30 @@
  *= require_tree .
  *= require_self
  */
-body { padding-top: 10px; }
-footer { position: fixed; bottom: 10px; }
-table, td, th { vertical-align: middle; border: none; }
-th { border-bottom: 1px solid #DDD; }
+body { 
+	padding-top: 10px; 
+}
+
+footer { 
+	position: fixed; 
+	background-color: #AAA;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4em;
+}
+
+.copywrite {
+	padding-top: 1em;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table, td, th { 
+	vertical-align: middle;
+	border: none; 
+}
+
+th { 
+	border-bottom: 1px solid #DDD; 
+}

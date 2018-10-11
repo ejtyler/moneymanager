@@ -27,18 +27,16 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Home", pages_info_path %></li>
-            <li><%= link_to "Subscriptions", subscriptions_path %></li>
-          </ul>
-          <p class="navbar-text pull-right">
             <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong>
-              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-            <% else %>
-              <%= link_to "Sign-up", new_user_registration_path, :class => 'navbar-link' %> |
-              <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+              <li><%= link_to "Subscriptions", subscriptions_path %></li>
             <% end %>
-          </p>
+          </ul>
+          <% if user_signed_in? %>
+            <ul class="nav navbar-nav pull-right">
+              <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+            </ul>
+          <% end %>
         </div>
       </div>
     </nav>
@@ -52,7 +50,7 @@
       <%= yield %>
     </div>
     <footer>
-      <div class="container">
+      <div class="container copywrite">
         Money Manager <%= Time.now.year %>
       </div>
     </footer>

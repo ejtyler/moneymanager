@@ -1,2 +1,22 @@
-<h1>Money Manager</h1>
-<p>Welcome to the Money Manager app.</p>
+<div class="welcome">
+	<h1>Money Manager</h1>
+	<% if user_signed_in? %>
+		<p>Welcome <%= current_user.email %></p>
+		<br>
+		<div class="links">
+			<h4>
+				<%= link_to subscriptions_path do %>
+					<button value="Subscriptions">Subscriptions</button>
+				<% end %>
+			</h4>
+		</div>
+	<% else %>
+		<div class="links">
+	    	<h4>
+	    		<%= link_to new_user_session_path do %><button value="Login">Login</button><% end %>
+	    		 or 
+		    	<%= link_to new_user_registration_path do %><button value="Sign-up">Sign-up</button><% end %>
+		    </h4>
+		</div>
+	<% end %>
+</div>

@@ -9,20 +9,24 @@
       <% end %>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <% @subscriptions.in_groups_of(3) do |group| %>
+  <% @subscriptions.in_groups_of(4) do |group| %>
     <div class="row">
       <% group.compact.each do |subscription| %>
-        <div class="col-md-4">
-          <h4><%= link_to subscription.title, subscription %></h4>
-          <%= subscription.amount %><br>
-          <%= subscription.due_date %>
+        <div class="col-md-3 list-links">
+          <%= link_to subscription do %>
+            <div class="subscription">
+              <h4><%= subscription.title %></h4>
+              <p>$<%= subscription.amount %><br>
+                <%= subscription.due_date %></p>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
+    <br>
   <% end %>
+
 </div>
 
 
