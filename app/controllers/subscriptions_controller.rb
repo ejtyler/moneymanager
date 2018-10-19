@@ -1,10 +1,16 @@
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.json { head :forbidden }
+      format.html { redirect_to subscriptions_url, :alert => exception.message }
+    end
+  end
 
   # GET /subscriptions
   # GET /subscriptions.json
   def index
-    @subscriptions = current_user.subscriptions
   end
 
   # GET /subscriptions/1
