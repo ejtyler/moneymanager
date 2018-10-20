@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .subscription {
 	text-align: center;
-	border: 3px solid black;
+	border: 3px double black;
 	padding-bottom: 1em;
 }
 
@@ -19,5 +19,13 @@
 		p {
 			font-weight: bold;
 		}
+		div {
+			border-style: solid;
+		}
 	}
+}
+
+.new-subscription {
+	text-align: center;
+	border: 3px dashed black;
 }

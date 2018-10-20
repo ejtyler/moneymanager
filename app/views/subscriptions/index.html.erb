@@ -1,12 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-10">
-      <h1>Subscriptions List</h1>
-    </div>
-    <div class="col-md-2" style="text-align: center">
-      <%= link_to new_subscription_path do %>
-        <button style="margin-top: 20%;" value="New Subscription">New Subscription</button>
-      <% end %>
+    <div class="col-md-12">
+      <h1>Bills & Subscriptions</h1>
     </div>
   </div>
 
@@ -26,7 +21,17 @@
     </div>
     <br>
   <% end %>
-
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 list-links">
+      <%= link_to new_subscription_path do %>
+        <div class="new-subscription">
+          <h4>Create a New Subscription</h4>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
