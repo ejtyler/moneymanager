@@ -40,3 +40,7 @@ table, td, th {
 th { 
 	border-bottom: 1px solid #DDD; 
 }
+
+.section {
+	border-bottom: 1px solid black;
+}

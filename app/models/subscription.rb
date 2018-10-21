@@ -1,4 +1,5 @@
 class Subscription < ApplicationRecord
+	self.inheritance_column = nil
 	belongs_to :user
 	enum frequency: { Yearly: 0, Quarterly: 1, Monthly: 2, Weekly: 3, Daily: 4 }
 	enum type: { Fixed: 0, Variable: 1 }

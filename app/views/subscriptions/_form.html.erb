@@ -1,4 +1,7 @@
 <%= form_with(model: subscription, local: true) do |form| %>
+
+  
+  <!-- Error Display -->
   <% if subscription.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
@@ -11,48 +14,62 @@
     </div>
   <% end %>
 
+
+  <!-- Subscription Form -->
   <div class="field" id="title">
-    <%= form.label :title %>
+    <%= form.label :title, "Who is this bill paid to?" %>
     <%= form.text_field :title %>
   </div>
 
+  <div class="field" id="details">
+    <%= form.label :details, "Any additional details for this bill?" %>
+    <%= form.text_field :details %>
+  </div>
+
   <div class="field" id="type">
-    <%= form.label :type %>
+    <%= form.label :type, "Is the amount the same each month or variable?" %>
     <span id="fixed-amount">
-      <%= form.radio_button :type, 'fixed', :checked => true %>
-      <%= label :type_fixed, 'Fixed Amount', :value => 'fixed', :style => "display: inline-block;" %>
+      <%= form.radio_button :type, 'Fixed' %>
+      <%= form.label :type_fixed, 'Fixed Amount', :value => 'Fixed', :style => "display: inline-block;" %>
     </span>
     <br>
     <span id="variable-amount">
-      <%= form.radio_button :type, 'variable' %>
-      <%= label :type_variable, 'Variable Amount', :value => 'variable', :style => "display: inline-block;" %>
+      <%= form.radio_button :type, 'Variable' %>
+      <%= form.label :type_variable, 'Variable Amount', :value => 'Variable', :style => "display: inline-block;" %>
     </span>
   </div>
 
   <div class="field" id="frequency">
-    <%= form.label :frequency %>
-    <%= form.select :frequnecy, Subscription.frequencies %>
+    <%= form.label :frequency, "How often does this bill come?" %>
+    <%= form.select :frequency, Subscription.frequencies.keys.to_a %>
+  </div>
+
+  <div class="field" id="autopay">
+    <%= form.label :autopay, "Is it setup to autopay?" %>
+    <%= form.select :autopay, Subscription.autopays.keys.to_a %>
   </div>
 
   <div class="field" id="statement-date">
-    <%= form.label :statement_date %>
+    <%= form.label :statement_date, "When will the next statement for this bill come?" %>
     <%= form.date_select :statement_date %>
   </div>
 
   <div class="field" id="due-date">
-    <%= form.label :due_date %>
+    <%= form.label :due_date, "When is the next time this bill due?" %>
     <%= form.date_select :due_date %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
+  <div class="field" id="amount">
+    <%= form.label :amount, "What amount is the bill for?" %>
     <%= form.text_field :amount %>
   </div>
 
+
+  <!-- Submit or Cancel Form -->
   <div class="actions">
     <%= form.submit %>
-    <%= link_to :back do %>
-      <button value="Cancel">Cancel</button>
-    <% end %>
+    <%= link_to :back do %><button value="Cancel">Cancel</button><% end %>
   </div>
+
+
 <% end %>

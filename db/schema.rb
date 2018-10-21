@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_172133) do
+ActiveRecord::Schema.define(version: 2018_10_21_132820) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_10_20_172133) do
     t.date "statement_date"
     t.integer "status"
     t.integer "autopay"
+    t.string "details"
+    t.date "payment_date"
   end
 
   create_table "users", force: :cascade do |t|

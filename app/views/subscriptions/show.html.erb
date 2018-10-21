@@ -1,8 +1,8 @@
 <container class="container">
 	<div class="row">
 		<div class="col-md-3 subscription">
-			<h4><b>Title: </b><%= @subscription.title %></h4>
-			<p><b>Amount: </b>$<%= @subscription.amount %></p>
+			<h4><%= @subscription.title %></h4>
+			<p><b>Amount: </b><%= number_to_currency @subscription.amount %></p>
 			<p><b>Due Date: </b><%= @subscription.due_date %></p>
 			<p>
 				<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
