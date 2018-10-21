@@ -11,11 +11,14 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.json
   def index
+    # @subscriptions automatically set to Subscription.accessible_by(current_user) by CanCan
+    @subscriptions = @subscriptions.order(due_date: :asc)
   end
 
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
+    # @subscription automatically set to Subscription.find(params[:id])
   end
 
   # GET /subscriptions/new
@@ -25,6 +28,7 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/1/edit
   def edit
+    # @subscription automatically set to Subscription.find(params[:id])
   end
 
   # POST /subscriptions

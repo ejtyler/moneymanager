@@ -11,12 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="title">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field" id="type">
+    <%= form.label :type %>
+    <span id="fixed-amount">
+      <%= form.radio_button :type, 'fixed', :checked => true %>
+      <%= label :type_fixed, 'Fixed Amount', :value => 'fixed', :style => "display: inline-block;" %>
+    </span>
+    <br>
+    <span id="variable-amount">
+      <%= form.radio_button :type, 'variable' %>
+      <%= label :type_variable, 'Variable Amount', :value => 'variable', :style => "display: inline-block;" %>
+    </span>
+  </div>
+
+  <div class="field" id="frequency">
+    <%= form.label :frequency %>
+    <%= form.select :frequnecy, Subscription.frequencies %>
+  </div>
+
+  <div class="field" id="statement-date">
+    <%= form.label :statement_date %>
+    <%= form.date_select :statement_date %>
+  </div>
+
+  <div class="field" id="due-date">
     <%= form.label :due_date %>
     <%= form.date_select :due_date %>
   </div>
