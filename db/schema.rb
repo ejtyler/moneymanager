@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_132820) do
+ActiveRecord::Schema.define(version: 2018_10_21_205500) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "title"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_132820) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "frequency"
-    t.integer "type"
+    t.integer "subtype"
     t.date "statement_date"
     t.integer "status"
     t.integer "autopay"

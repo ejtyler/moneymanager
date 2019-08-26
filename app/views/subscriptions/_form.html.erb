@@ -26,16 +26,16 @@
     <%= form.text_field :details %>
   </div>
 
-  <div class="field" id="type">
-    <%= form.label :type, "Is the amount the same each month or variable?" %>
+  <div class="field" id="subtype">
+    <%= form.label :subtype, "Is the amount the same each month or variable?" %>
     <span id="fixed-amount">
-      <%= form.radio_button :type, 'Fixed' %>
-      <%= form.label :type_fixed, 'Fixed Amount', :value => 'Fixed', :style => "display: inline-block;" %>
+      <%= form.radio_button :subtype, 'Fixed' %>
+      <%= form.label :subtype_fixed, 'Fixed Amount', :value => 'Fixed', :style => "display: inline-block;" %>
     </span>
     <br>
     <span id="variable-amount">
-      <%= form.radio_button :type, 'Variable' %>
-      <%= form.label :type_variable, 'Variable Amount', :value => 'Variable', :style => "display: inline-block;" %>
+      <%= form.radio_button :subtype, 'Variable' %>
+      <%= form.label :subtype_variable, 'Variable Amount', :value => 'Variable', :style => "display: inline-block;" %>
     </span>
   </div>
 
